@@ -33,7 +33,8 @@ public class DieProcedure {
             Random randGen = new Random();
 			
             int randNum;
-			
+
+            // Generates random number from 1-max range	
             randNum = randGen.nextInt(maxValue) + 1;
             return randNum;
         }
