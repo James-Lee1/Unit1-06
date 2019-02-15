@@ -18,15 +18,30 @@ public class HardDieProcedure {
         int minValue;	
         int maxValue;
         int randNum;
+        int counter;
 
         Scanner userInput = new Scanner(System.in);
 	
-        // Obtain min and max bounds from user	
-        System.out.print("Input a positive integer for the min value: ");
-        minValue = userInput.nextInt();
+        minValue = 0;
+        maxValue = 0;
+        counter = 0;
+
+        // Obtain min and max bounds from user
+        // If min is greater than or equal to max, asks user to pick new number
+        while (minValue >= maxValue) {
+
+            if (counter != 0) {
+                 System.out.print("That is an invalid input! ");
+            }
+
+            System.out.print("Input a valid integer for the min value: ");
+            minValue = userInput.nextInt();
         
-        System.out.print("Input a positive integer for the max value: ");
-        maxValue = userInput.nextInt();
+            System.out.print("Input a valid integer for the max value: ");
+            maxValue = userInput.nextInt();
+
+            counter += 1;
+        }
 		
         randNum = RollDie(minValue, maxValue);
         System.out.print("Your number is " + randNum + ".");
