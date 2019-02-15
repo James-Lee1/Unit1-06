@@ -3,8 +3,8 @@
  * Created by: James Lee
  * Created on: Feb 2019
  * Created for: ICS4U
- * This program chooses a random number from 1 to a specified max range from
- * user
+ * This program chooses a random number from min range to a specified max 
+ * range from user
  *
  ****************************************************************************/
 
@@ -20,7 +20,8 @@ public class HardDieProcedure {
         int randNum;
 
         Scanner userInput = new Scanner(System.in);
-		
+	
+        // Obtain min and max bounds from user	
         System.out.print("Input a positive integer for the min value: ");
         minValue = userInput.nextInt();
         
@@ -37,7 +38,7 @@ public class HardDieProcedure {
             Random randGen = new Random();
 			
             int randNum;
-			
+	    // Random number generator from min to max range		
             randNum = randGen.nextInt((maxValue - minValue) + 1) + minValue;
             //System.out.print(maxValue + minValue);
             return randNum;
