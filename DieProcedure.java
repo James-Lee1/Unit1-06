@@ -18,11 +18,17 @@ public class DieProcedure {
         int maxValue;
         int randNum;
 
+        maxValue = 0;
+        randNum = 0;
+
         Scanner userInput = new Scanner(System.in);
-		
-        System.out.print("Input a positive integer for the max value: ");
-        maxValue = userInput.nextInt();
-		
+	
+        while (maxValue <= 0) {
+
+            System.out.print("Input a positive integer for the max value: ");
+            maxValue = userInput.nextInt();
+	}
+	
         randNum = RollDie(maxValue);
         System.out.print("Your number is " + randNum + ".");
 
